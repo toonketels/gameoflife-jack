@@ -12,7 +12,7 @@ class Painter {
         var char dead, alive, currentChar;
         var String it;
         let i = 0;
-        let it = "ox";
+        let it = " o";
         let dead = it.charAt(0);
         let alive = it.charAt(1);
 

@@ -11,6 +11,7 @@ class Universe {
         let width = w;
         let height = h;
         do initGrid(w * h);
+        do seedGrid();
         return this;
     }
 
@@ -24,6 +25,19 @@ class Universe {
             let grid[i] = DEAD;
             let i = i + 1;
         }
+        return;
+    }
+
+    method void seedGrid() {
+        let grid[11*64+30] = ALIVE;
+        let grid[11*64+31] = ALIVE;
+        let grid[11*64+32] = ALIVE;
+        let grid[12*64+30] = ALIVE;
+        let grid[12*64+31] = ALIVE;
+        let grid[12*64+32] = ALIVE;
+        let grid[13*64+30] = ALIVE;
+        let grid[13*64+31] = ALIVE;
+        let grid[13*64+32] = ALIVE;
         return;
     }
 

@@ -1,0 +1,13 @@
+class Main {
+    
+    function void main() {
+        var Universe uni;
+        var Painter painter;
+        let uni = Universe.new(64, 23);
+        let painter = Painter.new();
+
+        do painter.paint(uni.getGrid(), uni.getSize());
+
+        return;
+    }
+}

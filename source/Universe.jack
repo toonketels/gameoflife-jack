@@ -1,0 +1,55 @@
+class Universe {
+
+    field Array grid;
+    field int width, height;
+    field int size;
+    field int DEAD, ALIVE;
+
+    constructor Universe new(int w, int h) {
+        let DEAD = 0;
+        let ALIVE = 1;
+        let width = w;
+        let height = h;
+        do initGrid(w * h);
+        return this;
+    }
+
+    method void initGrid(int gridSize) {
+        var int i;
+        let size = gridSize;
+        let i = 0;
+        let grid = Array.new(size);
+
+        while (i < size) {
+            let grid[i] = DEAD;
+            let i = i + 1;
+        }
+        return;
+    }
+
+    method int getWidth() {
+        return width;
+    }
+
+    method int getHeight() {
+        return height;
+    }
+
+    method int getSize() {
+        return size;
+    }
+
+    method int getCellState(int pos) {
+        return grid[pos];
+    }
+
+    method Array getGrid() {
+        return grid;        
+    }
+
+    method void dispose() {
+        do grid.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+}

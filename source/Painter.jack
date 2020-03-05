@@ -1,0 +1,36 @@
+class Painter {
+
+    field int width, height;
+
+    constructor Painter new() {
+        let width = 10;
+        return this;
+    }
+
+    method void paint(Array grid, int size) {
+        var int i;
+        var char dead, alive, currentChar;
+        var String it;
+        let i = 0;
+        let it = "ox";
+        let dead = it.charAt(0);
+        let alive = it.charAt(1);
+
+        while (i < size) {
+            if (grid[i] = 1) {
+                let currentChar = alive;
+            } else {
+                let currentChar = dead;
+            }
+            do Output.printChar(currentChar);
+            let i = i + 1;
+        }
+
+        return;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

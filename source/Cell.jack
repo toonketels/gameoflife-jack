@@ -1,0 +1,20 @@
+class Cell {
+
+    field int state;
+    field int position;
+
+    constructor Cell new(int pos, Universe u) {
+        let position = pos;
+        let state = u.getCellState(pos);
+        return this;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+
+
+
+}

@@ -3,20 +3,23 @@ class Main {
     function void main() {
 
         var Universe uni;
+        var CharPainter painter;
         var char key;
-        let uni = Universe.new(64, 23);
+        let painter = CharPainter.new();
+        let uni = Universe.new(painter.getWidth(), painter.getHeight());
 
-        do Painter.init();
-        do Painter.paint(uni.getGrid(), uni.getSize());
+        do painter.paint(uni.getGrid());
 
         while (true) {
+            do Sys.wait(100);
             do uni.next();
-            do Painter.paint(uni.getGrid(), uni.getSize());
+            do painter.paint(uni.getGrid());
             let key = Keyboard.keyPressed();
 
             // q
             if (key = 81) {
                 do uni.dispose();
+                do painter.dispose();
                 do Sys.halt();
             }
 

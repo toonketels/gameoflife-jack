@@ -9,15 +9,19 @@ class Universe {
     field int size, neighborSize;
     field int DEAD, ALIVE;
 
-    constructor Universe new(int w, int h) {
+    constructor Universe new(int w, int h) {    
+
+        do Utils.assertInt(w, 64);
+        do Utils.assertInt(h, 23);
+
         let DEAD = 0;
         let ALIVE = 1;
         let width = w;
         let height = h;
+        let size = width * height;
         let currentCell = Cell.new();
-        let gridA = initGrid(w * h);
-        let gridB = initGrid(w * h);
-        do Generator.seedTwo(gridA, width, height);
+        let gridA = Generator.seededGridTwo(w, h);
+        let gridB = Generator.emptyGrid(w, h);
         let currentGrid = gridA;
         return this;
     }
@@ -77,21 +81,6 @@ class Universe {
         if (i < 0)          { return size - i; }
         if (i > (size - 1)) { return i - size; }
         return i;
-    }
-
-    method Array initGrid(int gridSize) {
-        var Array grid;
-        var int i;
-
-        let size = gridSize;
-        let i = 0;
-        let grid = Array.new(size);
-
-        while (i < size) {
-            let grid[i] = DEAD;
-            let i = i + 1;
-        }
-        return grid;
     }
 
     method int getSize() {

@@ -1,0 +1,12 @@
+class Utils {
+
+    function int modulo(int numerator, int denominator)  {
+        var int remainder, divided, multiplied;
+
+        let divided = Math.divide(numerator, denominator);
+        let multiplied = Math.multiply(divided, denominator);
+        let remainder = numerator - multiplied;
+
+        return remainder;
+    }
+}

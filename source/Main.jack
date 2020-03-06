@@ -1,12 +1,24 @@
 class Main {
     
     function void main() {
-        var Universe uni;
-        var Painter painter;
-        let uni = Universe.new(64, 23);
-        let painter = Painter.new();
 
-        do painter.paint(uni.getGrid(), uni.getSize());
+        var Universe uni;
+        let uni = Universe.new(64, 23);
+
+        do Painter.init();
+        do Painter.paint(uni.getGrid(), uni.getSize());
+
+        while (true) {
+            do uni.next();
+            do Painter.paint(uni.getGrid(), uni.getSize());
+
+        }
+
+
+
+
+        // @TODO dispose objects
+        // @TODO listen for exit signal
 
         return;
     }

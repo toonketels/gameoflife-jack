@@ -17,7 +17,7 @@ class Universe {
         let currentCell = Cell.new();
         let gridA = initGrid(w * h);
         let gridB = initGrid(w * h);
-        do seedGrid(gridA);
+        do Generator.seedTwo(gridA, width, height);
         let currentGrid = gridA;
         return this;
     }
@@ -94,33 +94,6 @@ class Universe {
             let i = i + 1;
         }
         return grid;
-    }
-
-    method void seedGrid(Array grid) {
-
-        let grid[4*64+30] = ALIVE;
-        let grid[4*64+31] = ALIVE;
-        let grid[4*64+32] = ALIVE;
-        let grid[5*64+29] = ALIVE;
-        let grid[5*64+31] = ALIVE;
-        let grid[5*64+33] = ALIVE;
-
-        let grid[6*64+31] = ALIVE;
-        let grid[7*64+31] = ALIVE;
-        let grid[8*64+31] = ALIVE;
-        let grid[9*64+31] = ALIVE;
-        let grid[10*64+31] = ALIVE;
-
-        let grid[11*64+30] = ALIVE;
-        let grid[11*64+31] = ALIVE;
-        let grid[11*64+32] = ALIVE;
-        let grid[12*64+30] = ALIVE;
-        let grid[12*64+31] = ALIVE;
-        let grid[12*64+32] = ALIVE;
-        let grid[13*64+30] = ALIVE;
-        let grid[13*64+31] = ALIVE;
-        let grid[13*64+32] = ALIVE;
-        return;
     }
 
     method int getSize() {

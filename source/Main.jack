@@ -3,6 +3,7 @@ class Main {
     function void main() {
 
         var Universe uni;
+        var char key;
         let uni = Universe.new(64, 23);
 
         do Painter.init();
@@ -11,14 +12,15 @@ class Main {
         while (true) {
             do uni.next();
             do Painter.paint(uni.getGrid(), uni.getSize());
+            let key = Keyboard.keyPressed();
+
+            // q
+            if (key = 81) {
+                do uni.dispose();
+                do Sys.halt();
+            }
 
         }
-
-
-
-
-        // @TODO dispose objects
-        // @TODO listen for exit signal
 
         return;
     }
